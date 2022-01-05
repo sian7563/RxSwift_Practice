@@ -50,6 +50,10 @@ class MEmoryStorage: MemoStorageType {
         if let index = list.firstIndex(where: { $0 == memo }) {
             list.remove(at: index)
         }
+        
+        store.onNext(list)
+        
+        return Observable.just(memo)
     }
     
     
