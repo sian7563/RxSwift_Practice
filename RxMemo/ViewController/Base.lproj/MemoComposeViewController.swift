@@ -37,23 +37,23 @@ class MemoComposeViewController: UIViewController, ViewModelBindableType {
         cancelButton.rx.action = viewModel.cancelAction
         
         saveButton.rx.tap
-            .throttle(.millisenconds(500), scheduler: MainScheduler.instance)
-            .withLatesFrom(contentTextView.rx.text?.orEmpty)
-            .bind(to: ViewModel.saveAction.inputs)
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            .withLatestFrom(contentTextView.rx.text.orEmpty)
+            .bind(to: viewModel.saveAction.inputs)
             .disposed(by: rx.disposeBag)
     }
 
-    override func viewWillAppear(_animate: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         contentTextView.becomeFirstResponder()
     }
     
-    override func viewWillDisapper(_animated: Bool) {
-        super.viewWillDisapper(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         
         if contentTextView.isFirstResponder {
-            contentTextView.resignFirstResponder()
+           contentTextView.resignFirstResponder()
         }
     }
 }
