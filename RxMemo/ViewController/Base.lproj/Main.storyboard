@@ -195,7 +195,7 @@
                     <navigationItem key="navigationItem" title="메모 보기" id="cNe-ye-63u"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="deleteButton" destination="dcr-dh-AZ7" id="s1u-1j-hFP"/>
+                        <outlet property="deleteButton" destination="ZDS-9p-Toc" id="RgI-Wc-IsS"/>
                         <outlet property="editButton" destination="OMK-dp-miG" id="jyd-uw-PYP"/>
                         <outlet property="listTableView" destination="6DS-Q5-1Zz" id="yiG-sI-lpS"/>
                         <outlet property="shareButton" destination="0dl-Gf-d4P" id="AzQ-6A-sSl"/>
